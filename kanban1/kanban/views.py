@@ -2,6 +2,11 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required # 追加
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy # 追加
+from django.views.generic import DetailView, UpdateView, CreateView # 追加
+
+from .forms import UserForm, ListForm # 追加
+from . models import List # 追加
 
 
 def index(request):
