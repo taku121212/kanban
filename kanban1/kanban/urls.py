@@ -9,6 +9,7 @@ urlpatterns = [
     path("signup/", views.signup, name="signup"),
     path("users/<int:pk>/", views.UserDetailView.as_view(), name="users_detail"),
     path("users/<int:pk>/update/", views.UserUpdateView.as_view(), name="users_update"),
+<<<<<<< HEAD
     path("lists/create/", views.ListCreateView.as_view(), name="lists_create"),
     path("lists/", views.ListListView.as_view(), name="lists_list"),
     path("lists/<int:pk>/", views.ListDetailView.as_view(), name="lists_detail"),
@@ -22,5 +23,7 @@ urlpatterns = [
     path("home/", views.HomeView.as_view(), name="home"), # 追加
     path("cards/create/<int:list_pk>", views.CardCreateFromHomeView.as_view(), name="cards_create_from_home"),
 
+=======
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535
 ]
 

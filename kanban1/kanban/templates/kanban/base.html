@@ -29,6 +29,7 @@
           </ul>
           <ul class="navbar-nav">
             {% if request.user.is_authenticated %}
+<<<<<<< HEAD
             <li class="nav-item">
               <a class="nav-link" href="{% url 'kanban:users_detail' request.user.pk %}">{{ request.user.username }}</a>
             </li>
@@ -38,6 +39,15 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'kanban:cards_list' %}">カード一覧</a>
             </li>
+=======
+
+            <!-- ここからspanタグを変更 -->
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'kanban:users_detail' request.user.pk %}">{{ request.user.username }}</a>
+            </li>
+            <!-- ここまでspanタグを変更 -->
+
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535
             <li class="nav-item">
               <a class="nav-link" href="{% url 'logout' %}">ログアウト</a>
             </li>

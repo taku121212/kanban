@@ -1,8 +1,11 @@
 from django import forms
 from django.contrib.auth.models import User
 
+<<<<<<< HEAD
 from .models import List, Card
 
+=======
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535
 
 class UserForm(forms.ModelForm):
 
@@ -10,6 +13,7 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ("username", "last_name", "first_name", "email",)
 
+<<<<<<< HEAD
 
 class ListForm(forms.ModelForm):
 
@@ -36,3 +40,5 @@ class CardCreateFromHomeForm(forms.ModelForm):
 
 
 
+=======
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535

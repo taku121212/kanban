@@ -1,4 +1,5 @@
 from django.contrib.auth import login
+<<<<<<< HEAD
 from django.contrib.auth.decorators import login_required # 追加
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
@@ -9,13 +10,26 @@ from .mixins import OnlyYouMixin
 from .forms import UserForm, ListForm, CardForm, CardCreateFromHomeForm
 from .models import List, Card # 追記
 from django.views.generic import DetailView, UpdateView, CreateView, ListView, DeleteView
+=======
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User # 追加
+from django.contrib.auth.mixins import LoginRequiredMixin 
+from django.shortcuts import render, redirect
+from django.views.generic import DetailView # 追加
+from django.shortcuts import render, redirect, resolve_url # resolve_urlを追加
+from django.views.generic import DetailView, UpdateView
+
+from .forms import UserForm
+from .mixins import OnlyYouMixin
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535
 
 
 def index(request):
     return render(request, "kanban/index.html")
 
 
-@login_required # 追加
+@login_required
 def home(request):
     return render(request, "kanban/home.html")
 
@@ -35,7 +49,12 @@ def signup(request):
     return render(request, 'kanban/signup.html', context)
 
 
+<<<<<<< HEAD
 class UserDetailView(LoginRequiredMixin, DetailView): # この行を編集
+=======
+
+class UserDetailView(LoginRequiredMixin, DetailView):
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535
     model = User
     template_name = "kanban/users/detail.html"
 
@@ -46,6 +65,7 @@ class UserUpdateView(OnlyYouMixin, UpdateView): # この行を編集
 
     def get_success_url(self):
         return resolve_url('kanban:users_detail', pk=self.kwargs['pk'])
+<<<<<<< HEAD
 
 class ListCreateView(LoginRequiredMixin, CreateView):
     model = List
@@ -145,3 +165,5 @@ class CardCreateFromHomeView(LoginRequiredMixin, CreateView):
 
 
 
+=======
+>>>>>>> e57309d5b5c860910c1d1179ae5b2d6325210535
